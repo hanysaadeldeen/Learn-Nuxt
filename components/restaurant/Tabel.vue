@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import restaurants from "@/data.json";
 
-onMounted(() => {
-  console.log([...restaurants].splice(0, 25));
-  console.log([...restaurants].splice(25, 25));
-});
 const restaurantsOrganized = {
   first: [...restaurants].splice(0, 25),
   second: [...restaurants].splice(25, 25),

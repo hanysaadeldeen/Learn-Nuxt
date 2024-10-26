@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <Navbar />
-
-    <div class="container">
-      <h1>restaurant page</h1>
+  <div class="container">
+    <h1>restaurant page</h1>
+    <NuxtLayout name="custom">
       <div class="container">
         <RestaurantTabel />
       </div>
-    </div>
+    </NuxtLayout>
   </div>
 </template>
 
