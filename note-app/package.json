@@ -10,8 +10,14 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/ui": "^2.18.7",
+    "@supabase/supabase-js": "^2.45.6",
     "nuxt": "^3.13.2",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "pug": "^3.0.3",
+    "pug-plain-loader": "^1.1.0"
   }
 }

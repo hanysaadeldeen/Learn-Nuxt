@@ -1,35 +1,33 @@
-<template>
-  <div class="container">
-    <div class="content">
-      <div class="logo">
-        <h2>note-app</h2>
-      </div>
-      <nav>
-        <ul>
-          <li><nuxt-link to="/">Home</nuxt-link></li>
-          <li><nuxt-link :to="{ name: 'notes' }">Notes</nuxt-link></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+<template lang="pug">
+  header
+    .logo
+      h2:   nuxt-link(to="/") note-app
+    nav
+      ul
+        li 
+          nuxt-link(to="/" ) Home
+          nuxt-link(:to="{ name: 'notes' }").mx-5 Notes
+      UButton(color="red" @click="logOut" v-if="userIsLoggedIn") LogOut   
+
   <slot />
 </template>
 
+<script setup lang="ts">
+const { logOut, isLoggedIn } = useAuth();
+
+const userIsLoggedIn = computed(() => isLoggedIn());
+</script>
 <style scoped>
-.container {
+header {
   height: 100px;
-  width: 100%;
   background-color: gray;
   color: white;
   padding: 20px 25px;
-}
-
-.content {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 ul li {
   display: inline-block;
   margin-right: 20px;
